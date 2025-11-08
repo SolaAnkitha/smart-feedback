@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Smart Feedback System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #222;
+      --card: #fff;
+      --nav-bg: #007bff;
+      --footer-bg: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      transition: 0.3s ease;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1e1e1e;
+      --nav-bg: #222;
+      --footer-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar {
+      background-color: var(--nav-bg) !important;
+    }
+
+    .card {
+      background-color: var(--card);
+      color: var(--text);
+      transition: 0.3s ease;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #007bff;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="#">Smart Feedback Analyzer</a>
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="btn btn-light btn-sm">← Home</a>
+        <button class="toggle-btn" onclick="toggleDarkMode()" title="Toggle Theme">🌓</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5 mb-5">
+    <div class="card shadow p-4">
+      <h2 class="text-center mb-4">🤖 What is Smart Feedback System?</h2>
+      <p>
+        <strong>Smart Feedback System (SFS)</strong> is a powerful, AI-integrated platform for collecting and analyzing user feedback in real-time. Built using PHP, MySQL, and web technologies, it enables businesses and institutions to extract insights and improve services effectively.
+      </p>
+
+      <h4 class="section-title"><i class="fas fa-star icon"></i> Key Features:</h4>
+      <ul>
+        <li><strong>User roles:</strong> Admin, Company, and General Users with personalized dashboards</li>
+        <li><strong>Feedback submission:</strong> Rate, comment, and categorize feedback</li>
+        <li><strong>Real-time sentiment analysis:</strong> Detects Positive, Negative, or Neutral sentiment</li>
+        <li><strong>Insightful visualizations:</strong> Charts and emotion insights powered by Chart.js</li>
+        <li><strong>Data export:</strong> Download feedback as CSV with filters</li>
+        <li><strong>Company-specific control:</strong> Assign users and manage company data</li>
+      </ul>
+
+      <h4 class="section-title"><i class="fas fa-users icon"></i> Developed By:</h4>
+      <p>
+        Gunika Bansal 
+        <br>
+        B.Tech CSE, Chandigarh Engineering College 
+      </p>
+
+      <h4 class="section-title"><i class="fas fa-envelope icon"></i> Contact:</h4>
+      <p>Email: imgunika19@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Smart Feedback System | Designed for smarter communication</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guest Feedback - Smart Feedback System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 550px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span class="navbar-brand">Smart Feedback Analyzer</span>
+      <a href="index.html" class="btn btn-light btn-sm">← Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="form-box">
+      <h3 class="text-center text-primary mb-4">📝 Submit Feedback as Guest</h3>
+
+      <form method="POST" action="../backend/guest-feedback.php">
+        <div class="form-group">
+          <label for="category">📂 Feedback Category</label>
+          <select name="category" class="form-control" required>
+            <option value="">-- Select Category --</option>
+            <option>Website</option>
+            <option>Service</option>
+            <option>Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="rating">⭐ Rating: <span id="ratingValue">3</span>/5</label>
+          <input type="range" name="rating" id="rating" min="1" max="5" value="3"
+            class="form-control-range w-100"
+            oninput="document.getElementById('ratingValue').innerText = this.value;">
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="comment">💬 Your Feedback</label>
+          <textarea name="comment" id="comment" rows="4" class="form-control"
+                    placeholder="Your thoughts..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block mt-4">📩 Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="text-center mt-4">
+    <p>© 2025 Smart Feedback System | Guest Feedback Portal</p>
+  </footer>
+</body>
+</html>

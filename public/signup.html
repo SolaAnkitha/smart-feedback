@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Smart Feedback Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #f0f2f5;
+      --text: #222;
+      --card: #fff;
+      --footer: #ddd;
+      --nav: #007bff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1f1f1f;
+      --footer: rgba(255,255,255,0.1);
+      --nav: #222;
+    }
+
+    .navbar {
+      background-color: var(--nav) !important;
+    }
+
+    .page-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-box {
+      background-color: var(--card);
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 480px;
+      color: var(--text);
+    }
+
+    .form-box h3 {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #28a745;
+    }
+
+    .form-control {
+      border-radius: 8px;
+    }
+
+    .btn-success {
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      color: white;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--footer);
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
+      margin-top: 30px;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span class="navbar-brand mb-0 h1">Smart Feedback Analyzer</span>
+      <button class="toggle-btn" onclick="toggleDarkMode()" title="Toggle Theme">🌓</button>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="page-container">
+    <div class="form-box">
+      <h3>📝 Create Your Account</h3>
+      <form method="POST" action="../backend/register.php">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" placeholder="👤 Full Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="📧 Email Address" required />
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="🔐 Create Password" required />
+        </div>
+
+        <!-- Optional role selection -->
+        <div class="form-group">
+          <label for="role">Register as:</label>
+          <select class="form-control" name="role" required>
+            <option value="user">👤 General User</option>
+            <option value="company">🏢 Company Manager</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input type="number" name="company_id" class="form-control" placeholder="🏷 Company ID (optional)">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Register</button>
+      </form>
+
+      <p class="text-center mt-4">
+        Already have an account?
+        <a href="index.html" class="text-primary font-weight-bold">Login here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Smart Feedback System | Built with Purpose</p>
+  </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

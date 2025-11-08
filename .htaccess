@@ -1,0 +1,30 @@
+# ==================================================
+# SMART FEEDBACK SYSTEM (SFS)
+# Localhost .htaccess Configuration
+# ==================================================
+
+# Disable directory listing
+Options -Indexes
+
+# Deny access to backend folder
+<Directory "/backend">
+    Require all denied
+</Directory>
+
+# Block direct access to sensitive file types
+<FilesMatch "\.(sql|env|ini|log)$">
+    Require all denied
+</FilesMatch>
+
+# Allow access to the public folder
+<Directory "/public">
+    Require all granted
+</Directory>
+
+# Enable URL rewriting (optional)
+RewriteEngine On
+
+# Optional: Redirect all non-existing routes to index.html (useful for clean URLs)
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ public/index.html [L,QSA]
